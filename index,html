@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="intro" style="text-align: center; margin-bottom: 4rem;">
+    <h1 style="font-size: 3rem; margin-bottom: 1rem;">A History of Thought</h1>
+    <p style="color: var(--text-muted); max-width: 600px; margin: 0 auto;">A chronological cartography of Western, Chinese, and Indian philosophies.</p>
+</div>
+
+<div class="timeline">
+    {% assign sorted_philosophers = site.philosophers | sort: "birth_year" %}
+    {% for philosopher in sorted_philosophers %}
+    <div class="timeline-item">
+        <span class="year">{{ philosopher.years }}</span>
+        <span class="culture-marker {{ philosopher.culture }}"></span>
+        <a href="{{ philosopher.url | relative_url }}">{{ philosopher.title }}</a>
+    </div>
+    {% endfor %}
+</div>

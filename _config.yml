@@ -1,0 +1,26 @@
+title: Amorodium
+description: A chronological cartography of human thought.
+baseurl: ""
+url: "https://amorodium.github.io"
+
+collections:
+  philosophers:
+    output: true
+    permalink: /p/:name/
+  essays:
+    output: true
+    permalink: /e/:name/
+
+defaults:
+  - scope:
+      path: ""
+      type: philosophers
+    values:
+      layout: philosopher
+  - scope:
+      path: ""
+      type: essays
+    values:
+      layout: essay
+
+markdown: kramdown
